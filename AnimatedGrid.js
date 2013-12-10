@@ -5,8 +5,9 @@
  * @website http://noe-interactive.com
  * @licence MIT
  * 
- *  @todo : if you toggle quickly it's could be weird
+ * @todo : if you toggle quickly it's could be weird
  */
+/*global jQuery:false */
 ;(function(namespace, $) {
     "use strict";
     
