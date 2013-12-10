@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated grid default</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../../default.css" media="all" rel="stylesheet" type="text/css"  />
+        <link href="style.css" media="all" rel="stylesheet" type="text/css"  />
+    </head>
+    <body>
+        <h1>Animated Grid, simple example</h1>
+        <h3>All these blocks are simply positionning in float left, we use AnimatedGrid.js to animate appear and disappear</h3>
+        
+        <button id="toggle">Toggle</button>
+        
+        <div class="animated-grid">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="../../AnimatedGrid.js"></script>
+        <script>
+            var $grid = $('.animated-grid');
+            $grid.AnimatedGrid({
+                limitToGroup : 10
+            });
+            
+            $('#toggle').on('click', function() {
+                $grid.AnimatedGrid('toggle', function() {
+                    console.log('FINISH');
+                });
+            });
+        </script>
+    </body>
+</html>

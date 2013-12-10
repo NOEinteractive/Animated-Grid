@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated grid filter</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../../default.css" media="all" rel="stylesheet" type="text/css"  />
+        <link href="style.css" media="all" rel="stylesheet" type="text/css"  />
+    </head>
+    <body>
+        <h1>Animated Grid, filter example</h1>
+        
+        <form>
+            <div class="form-field red">
+                <input type="checkbox" id="red" checked/>
+                <label for="red">Red</label>
+            </div>
+            <div class="form-field blue">
+                <input type="checkbox" id="blue" checked/>
+                <label for="blue">Blue</label>
+            </div>
+            <div class="form-field purple">
+                <input type="checkbox" id="purple" checked/>
+                <label for="purple">Purple</label>
+            </div>
+            <div class="form-field yellow">
+                <input type="checkbox" id="yellow" checked/>
+                <label for="yellow">Yellow</label>
+            </div>
+            <div class="form-field darkblue">
+                <input type="checkbox" id="darkblue" checked/>
+                <label for="darkblue">Dark blue</label>
+            </div>
+        </form>
+        
+        <div class="animated-grid">
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="../../AnimatedGrid.js"></script>
+        <script>
+            (function($) {
+                
+                //just markup creation here, doesn't matter
+                var $wrapper = $('.animated-grid');
+                var colors = ['red', 'blue', 'purple', 'yellow', 'darkblue'],
+                      colorsNumber = colors.length;
+                
+                var markup = [];
+                for(var i = 0; i<40; i++) {
+                    markup.push('<div class="grid-item '+(colors[Math.round(Math.random()* (colorsNumber -1))])+'"></div>');
+                }
+                $wrapper.html(markup.join(''));
+                
+                
+                //animated filter
+                var grid = new AnimatedGrid($wrapper);
+                
+                $('form').on('change', 'input', function(e) {
+                    var show = e.currentTarget.checked,
+                          color = e.currentTarget.id;
+                          
+                          //hide the grid
+                          grid.hide(function() {
+                            //then, iterate on all the item, and filter
+                            grid.each(function() {
+                                if(this.$e.hasClass(color)) {
+                                    this.$e[show ? 'removeClass' : 'addClass']('grid-item-hidden');
+                                }
+                            });
+                            //show the grid
+                            grid.show();
+                          });
+                });
+            
+            })(jQuery);
+        </script>
+    </body>
+</html>

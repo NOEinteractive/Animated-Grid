@@ -1,0 +1,42 @@
+body {
+    font-size: 1.5em;
+    font-family: 'Arial', sans-serif;
+    background: #79f4ae;
+    color: #333;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+h3 {
+    max-width: 880px;
+    margin: 40px auto;
+}
+
+#toggle {
+    display:block;
+    margin:auto;
+    background: #2c97df;
+    line-height:50px;
+    height: 50px;
+    padding: 0 30px;
+    margin-bottom: 40px;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    color:white;
+    font-size: 20px;
+}
+
+.animated-grid {
+    overflow:hidden;
+}
+
+.grid-item {
+    float:left;
+    width:200px;
+    height:200px;
+    background:#17a086;
+    margin:10px;
+}

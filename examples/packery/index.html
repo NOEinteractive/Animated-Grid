@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated grid with packery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../../default.css" media="all" rel="stylesheet" type="text/css"  />
+        <link href="style.css" media="all" rel="stylesheet" type="text/css"  />
+    </head>
+    <body>
+        <h1>Animated Grid, packery usage</h1>
+        
+        <button id="toggle">Toggle</button>
+        
+        <div class="animated-grid">
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="libs/packery.min.js"></script>
+        <script src="../../AnimatedGrid.js"></script>
+        <script>
+            (function($) {
+                
+                //just markup creation here, doesn't matter
+                var $wrapper = $('.animated-grid');
+                var classes = ['small', 'medium', 'large', 'portrait', 'landscape'],
+                      classesNumber = classes.length;
+                
+                var markup = [];
+                for(var i = 0; i<40; i++) {
+                    markup.push('<div class="grid-item grid-item-disappear '+(classes[Math.round(Math.random()* (classesNumber -1))])+'"></div>');
+                }
+                $wrapper.html(markup.join(''));
+                
+                
+                //packery creation
+                var pkry = new Packery( $wrapper[0], {
+                    itemSelector: '.grid-item',
+                    columnWidth: 200,
+                    gutter : 20,
+                    transitionDuration : 0
+                });
+              
+                //animated grid
+                var grid = new AnimatedGrid($wrapper, {
+                    needSorter : true
+                });
+                //we specify that the grid is hidden at page load
+                grid.visible = false;
+                
+                $('#toggle').on('click', function() {
+                    grid.toggle();
+                });
+            
+            })(jQuery);
+        </script>
+    </body>
+</html>

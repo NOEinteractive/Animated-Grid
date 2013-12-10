@@ -1,0 +1,22 @@
+.animated-grid>* {
+    /* default  transition */
+    -webkit-transition:-webkit-transform 0.2s ease, opacity 0.2s ease;
+    -moz-transition:-moz-transform 0.2s ease, opacity 0.2s ease;
+    -ms-transition:-ms-transform 0.2s ease, opacity 0.2s ease;
+    -o-transition:-o-transform 0.2s ease, opacity 0.2s ease;
+    transition:transform 0.2s ease, opacity 0.2s ease;
+}
+
+.grid-item-disappear {
+    -webkit-transform: translate3d(0, 20px, 0);
+    -moz-transform: translate3d(0, 20px, 0);
+    -ms-transform: translate3d(0, 20px, 0);
+    -o-transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 20px, 0);
+    opacity:0;
+    /* @todo cross browser opacity */
+}
+
+.grid-item-hidden {
+    display: none;
+}
