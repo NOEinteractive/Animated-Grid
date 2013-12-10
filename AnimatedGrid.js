@@ -134,13 +134,7 @@
 
     //jQuery plugin
     $.fn.AnimatedGrid = function(opt) {
-        var arg = [];
-        //copy arguments into an array and remove first entry
-        //splice doesn't work because arguments it an object, not an array
-        for(var i = 1, L = arguments.length; i<L; i++) {
-            arg.push(arguments[i]);
-        }
-        
+        var arg = Array.prototype.splice.call(arguments, 1, arguments.length); //remove first argument
         return this.each(function() {
             if(typeof opt === 'object') {
                 new Grid($(this), opt);
