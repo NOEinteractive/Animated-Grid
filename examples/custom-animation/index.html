@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animated grid default</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../../default.css" media="all" rel="stylesheet" type="text/css"  />
+        <link href="style.css" media="all" rel="stylesheet" type="text/css"  />
+    </head>
+    <body>
+        <h1>Animated Grid, custom animation example</h1>
+        <div class="btn-wrapper">
+            <a class="btn current" data-animation="grid-animate-default" >Default</a>
+            <a class="btn" data-animation="grid-animate-hor" >Horyzontal</a>
+            <a class="btn" data-animation="grid-animate-diagonal" >Diagonal</a>
+            <a class="btn" data-animation="grid-animate-scale" >Scale</a>
+            <a class="btn" data-animation="grid-animate-rotate" >Rotate</a>
+            <a class="btn" data-animation="grid-animate-rotate-2" >Rotate 2</a>
+        </div>
+        
+        
+        <div class="animated-grid grid-animate-default">
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"></div>
+        </div>
+        
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <script src="../../AnimatedGrid.js"></script>
+        <script>
+            var $grid = $('.animated-grid');
+            var previousAnimation = $grid[0].className.split(' ')[1];
+            
+            $grid.AnimatedGrid({
+                limitToGroup : 10
+            });
+            
+            var grid = $grid.data("animated-grid");
+            
+            var $btns = $('.btn').on('click', function(e) {
+                var $t = $(this);
+                $btns.not($t.addClass('current')).removeClass('current');
+                $grid.removeClass(previousAnimation).addClass($t.data('animation'));
+                previousAnimation = $t.data('animation');
+                
+                grid.hide(function() {
+                    grid.show();
+                });
+                e.preventDefault();
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+body {
+    font-size: 1.5em;
+    font-family: 'Arial', sans-serif;
+    background: #79f4ae;
+    color: #333;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.current {
+    text-decoration: underline;
+}
+
+h1, h3 {
+    text-align: center;
+}
+
+h3 {
+    max-width: 880px;
+    margin: 40px auto;
+}
+
+.btn-wrapper {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn-wrapper a {
+    margin: 0 20px;
+}
+
+.animated-grid {
+    -webkit-perspective-origin: center top;
+    -webkit-perspective: 1000;
+    perspective-origin: center top;
+    perspective: 1000;
+}
+
+.animated-grid:after {
+    content:'';
+    display: block;
+    clear:both;
+}
+
+.grid-item {
+    float:left;
+    width:200px;
+    height:200px;
+    background:#17a086;
+    margin:10px;
+}
+
+.grid-animate-hor .grid-item-disappear {
+    -webkit-transform: translate3d(20px, 0, 0);
+    -moz-transform: translate3d(20px, 0, 0);
+    -ms-transform: translate3d(20px, 0, 0);
+    -o-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+    opacity:0;
+}
+
+.grid-animate-diagonal .grid-item-disappear {
+    -webkit-transform: translate3d(20px, 20px, 0);
+    -moz-transform: translate3d(20px, 20px, 0);
+    -ms-transform: translate3d(20px, 20px, 0);
+    -o-transform: translate3d(20px, 20px, 0);
+    transform: translate3d(20px, 20px, 0);
+    opacity:0;
+}
+
+.grid-animate-scale .grid-item-disappear {
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+    opacity:0;
+}
+
+.grid-animate-rotate .grid-item-disappear {
+    -webkit-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    -moz-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    -ms-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    -o-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    opacity:0;
+}
+
+.grid-animate-rotate-2 .grid-item-disappear {
+    -webkit-transform: translate3d(0, 20px, 0) rotateY(-40deg);
+    -moz-transform: translate3d(0, 20px, 0) rotateY(-40deg);
+    -ms-transform: translate3d(0, 20px, 0) rotateY(-40deg);
+    -o-transform: translate3d(0, 20px, 0) rotateY(-40deg);
+    transform: translate3d(0, 20px, 0) rotateY(-40deg);
+    opacity:0;
+}
+
+.grid-animate-rotate-2 .grid-item-disappear:nth-child(odd) {
+    -webkit-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    -moz-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    -ms-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    -o-transform: translate3d(0, 20px, 0) rotateX(-40deg);
+    transform: translate3d(0, 20px, 0) rotateX(-40deg);
+}
