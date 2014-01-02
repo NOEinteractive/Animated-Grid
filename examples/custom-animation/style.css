@@ -53,6 +53,31 @@ h3 {
     margin:10px;
 }
 
+
+/* background-color animate */
+.grid-animate-color>* {
+    -webkit-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0s;
+    -moz-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0s;
+    -ms-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0s;
+    -o-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0s;
+    transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0s;
+}
+.grid-animate-color .grid-item-disappear {
+    -webkit-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0.1s;
+    -moz-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0.1s;
+    -ms-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0.1s;
+    -o-transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0.1s;
+    transition: ease-in-out background-color 0.2s 0s, opacity ease 0.1s 0.1s;
+    background:#17A0B6;
+    opacity:0;
+    -webkit-transform:inherit;
+    -moz-transform:inherit;
+    -ms-transform:inherit;
+    -o-transform:inherit;
+    transform:inherit;
+}
+
+/* horizontal */
 .grid-animate-hor .grid-item-disappear {
     -webkit-transform: translate3d(20px, 0, 0);
     -moz-transform: translate3d(20px, 0, 0);
@@ -62,6 +87,7 @@ h3 {
     opacity:0;
 }
 
+/* diagonal */
 .grid-animate-diagonal .grid-item-disappear {
     -webkit-transform: translate3d(20px, 20px, 0);
     -moz-transform: translate3d(20px, 20px, 0);
@@ -71,6 +97,7 @@ h3 {
     opacity:0;
 }
 
+/* scale */
 .grid-animate-scale .grid-item-disappear {
     -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
@@ -80,6 +107,7 @@ h3 {
     opacity:0;
 }
 
+/* rotate */
 .grid-animate-rotate .grid-item-disappear {
     -webkit-transform: translate3d(0, 20px, 0) rotateX(-40deg);
     -moz-transform: translate3d(0, 20px, 0) rotateX(-40deg);
@@ -89,6 +117,7 @@ h3 {
     opacity:0;
 }
 
+/* rotate fun */
 .grid-animate-rotate-2 .grid-item-disappear {
     -webkit-transform: translate3d(0, 20px, 0) rotateY(-40deg);
     -moz-transform: translate3d(0, 20px, 0) rotateY(-40deg);
