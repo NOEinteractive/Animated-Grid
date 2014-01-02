@@ -137,7 +137,7 @@
     $.fn.AnimatedGrid = function(opt) {
         var arg = Array.prototype.splice.call(arguments, 1, arguments.length); //remove first argument
         return this.each(function() {
-            if(typeof opt === 'object') {
+            if(!opt || typeof opt === 'object') {
                 new Grid($(this), opt);
             } else {
                 var instance = $(this).data('animated-grid');
