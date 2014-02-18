@@ -24,6 +24,9 @@
             hiddenClass : 'grid-item-hidden',
             //class for the disappear animation
             disappearClass : 'grid-item-disappear',
+            //by default, Animated grid considere each children of the wrapper has an item $wrapper.children()
+            //you can pass a selector as a string to look for only this item : $wrapper.find(selector)
+            itemsSelector : null,
             //delay between each item
             delay : 100,
             //we animate individualy 5 items, then we group all the others into one animation
@@ -48,7 +51,7 @@
         if($wrapper && $wrapper.length) {
             this.$wrapper = $wrapper.addClass(this.options.wrapperClass);
 
-            this.$items = this.$wrapper.children();
+            this.$items = this.options.itemsSelector && this.options.itemsSelector.length ? this.$wrapper.find(this.options.itemsSelector) : this.$wrapper.children();
             this.$$items = [];
             var i = 0, L = this.$items.length;
             for(; i<L; i++)  this.addItem($(this.$items[i]));            
