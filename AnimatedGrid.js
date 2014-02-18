@@ -103,13 +103,13 @@
                 (function(i) {
                     setTimeout(function() {
                         tmp[i].$e.addClass(scope.options.disappearClass);
-                    }, (scope.options.limitToGroup-i) * scope.options.delay);
+                    }, (Math.min(scope.options.limitToGroup, number) -i) * scope.options.delay);
                 })( i );
             }
 
             cb && setTimeout(function() {
                 cb();
-            }, limit * scope.options.delay + scope.options.transitionDuration);
+            }, Math.max(2, limit) * scope.options.delay + scope.options.transitionDuration);
             this.visible = false;
        },
        toggle : function(cb) {
